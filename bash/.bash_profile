@@ -19,12 +19,12 @@
 	# Automation & External Programs
 	alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 	alias googleLint="java -jar ~/runnables/java-format.jar"
-	alias tiler="~/.resources/bash_scripts/tiling.sh"
+	alias tiler="~/.config/scripts/tiling.sh"
 
 	# QOL
-	alias configs="~/.resources/bash_scripts/configs.sh"
 	alias createJava="~/.resources/bash_scripts/createJava.sh"
-	alias run="clear && ~/.resources/bash_scripts/compile.sh"
+	alias run="clear && ~/.config/scripts/compile.sh"
+	alias configs="~/.config/scripts/configs.sh"
 
 # Language Settings
 
