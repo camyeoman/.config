@@ -22,7 +22,7 @@
 	alias tiler="~/.resources/bash_scripts/tiling.sh"
 
 	# QOL
-	alias configs="nvim ~/.config/\$(rg --files --hidden ~/.config | rg '^.*\.config/((a\w+tty|tmux|yabai|skhd|bash|nvim/(modules|init)).*)' -r '\$1' | fzf)"
+	# alias configs="nvim ~/.config/\$(rg --files --hidden ~/.config | rg '^.*\.config/((a\w+tty|tmux|yabai|skhd|bash|nvim/(modules|init)).*)' -r '\$1' | fzf)"
 	alias createJava="~/.resources/bash_scripts/createJava.sh"
 	alias run="clear && ~/.resources/bash_scripts/compile.sh"
 
