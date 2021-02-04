@@ -13,7 +13,6 @@
 
 	# Utility
 	alias delete_swap_files="rm /Users/cyeoman/.local/share/nvim/swap/*"
-	alias run="clear && ~/.resources/bash_scripts/compile.sh"
 	alias branches="git branch | rg '[*\s]' -r ''"
 	alias tree="tree -C"
 
@@ -24,8 +23,8 @@
 
 	# QOL
 	alias configs="nvim ~/.config/\$(rg --files --hidden ~/.config | rg '^.*\.config/((a\w+tty|tmux|yabai|skhd|bash|nvim/(modules|init)).*)' -r '\$1' | fzf)"
-	alias names="python ~/Code/Python/Scripting/generateNames.py name"
 	alias createJava="~/.resources/bash_scripts/createJava.sh"
+	alias run="clear && ~/.resources/bash_scripts/compile.sh"
 
 # Language Settings
 
