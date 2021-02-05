@@ -22,8 +22,6 @@ cmd + ctrl - e : yabai -m window --toggle split
 # balance size of windows
 shift + cmd - 0 : yabai -m space --balance
 
-cmd - x : tree -C
-
 # send window to desktop and follow focus
 ctrl + cmd - 1 : yabai -m window --space 1; yabai -m space --focus 1
 ctrl + cmd - 2 : yabai -m window --space 2; yabai -m space --focus 2
