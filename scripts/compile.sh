@@ -39,21 +39,20 @@ function run_python() {
 function run_binary() {
 	if [ ! -s compilation_error ]; then
 		./${1%.*} $2 $3 $4 $5 $6 $7 $8 $9
+		rm ./${1%.*}
 	else
 		errors $1
 	fi
 
-	rm ./${1%.*}
 }
 
 function run_java() {
 	if [ ! -s compilation_error ]; then
 		java ${1%.*} $2 $3 $4 $5 $6 $7 $8 $9
+		rm ${1%.*}
 	else
 		errors $1
 	fi
-
-	rm ${1%.*}
 }
 
 if [[ ! $2 =~ $valid_files ]]; then
