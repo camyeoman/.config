@@ -44,6 +44,9 @@ key_bindings:
 
   - {  key: F,  mods: Command|Control,  action: ToggleSimpleFullscreen              }
 
+  # unbind the bloody cmd-w so I stop accidentally closing shit
+  - {  key: W,  mods: Command,          chars: ""                                   }
+
   # Send alt keys instead of special characters {{{
 
   - { key: A,          mods: Alt,              chars: "\x1ba"                       }
@@ -127,7 +130,6 @@ key_bindings:
 
     # these were used for tmux previously
 
-    # - {  key: W,  mods: Command,          chars: "\x02w"                              }
     # - {  key: H,  mods: Command,          chars: "\x02v"                              }
     # - {  key: S,  mods: Command,          chars: "\x02h"                              }
     # - {  key: J,  mods: Command,          chars: "\u001b[B"                           }
