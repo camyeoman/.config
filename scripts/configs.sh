@@ -1,18 +1,51 @@
 #!/bin/bash
 
-previus_path=$(pwd)
+PREVIUS_PATH=$(pwd)
+CHANGES_MADE='false'
+PUSH_CHANGES='false'
+
+# Check for command flags
+
+for arg in "$@"; do
+    case $arg in
+        -p|--push-changes)
+        PUSH_CHANGES="true"
+        shift # Remove flag from args array
+        ;;
+    esac
+done
 
 cd ~/.config
 
-programs="(alacritty|tmux|yabai|skhd|bash|scripts|nvim/(modules|init)).*"
-file=$(rg --files --hidden ~/.config | rg '^.*\.config/('$programs')' -r '$1' | fzf)
+apps_str="(alacritty|tmux|yabai|skhd|bash|scripts|nvim/(modules|init)).*"
+result=$(rg --files --hidden ~/.config | rg '^.*\.config/('$apps_str')' -r '$1' | fzf)
 
-nvim ~/.config/$file
+# Check for early termination
 
-sleep 0.2
-
-if [[ ! $(git status $file) =~ 'nothing to commit' ]]; then
-	git add $file && git commit $file && git push
+if [[ $result == '' ]]; then
+	exit
 fi
 
-cd $previus_path
+nvim ~/.config/$result
+
+sleep 0.1
+
+# Check if changes were made to file
+
+if [[ $PUSH_CHANGES == 'true' && ! $(git status $result) =~ 'nothing to commit' ]]; then
+	CHANGES_MADE="true"
+fi
+
+# if needed push changes
+
+if [[ $PUSH_CHANGES == 'true' ]]; then
+	if [[ $CHANGES_MADE == 'true' ]]; then
+		git add $result && git commit $result && git push
+	else
+		echo "No changes to push"
+	fi
+fi
+
+# return to previous path
+
+cd $PREVIUS_PATH
