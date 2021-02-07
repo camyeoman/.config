@@ -25,6 +25,7 @@
 	alias createJava="~/.resources/bash_scripts/createJava.sh"
 	alias run="clear && ~/.config/scripts/compile.sh"
 	alias configs="~/.config/scripts/configs.sh"
+	alias tls="clear && tree"
 
 # Language Settings
 
