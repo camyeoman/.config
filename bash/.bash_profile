@@ -14,18 +14,20 @@
 	# Utility
 	alias delete_swap_files="rm /Users/cyeoman/.local/share/nvim/swap/*"
 	alias branches="git branch | rg '[*\s]' -r ''"
-	alias tree="tree -C"
 
 	# Automation & External Programs
 	alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 	alias googleLint="java -jar ~/runnables/java-format.jar"
 	alias tiler="~/.config/scripts/tiling.sh"
 
+	# Overide defaults
+	alias tree="tree -C"
+
 	# QOL
 	alias createJava="~/.resources/bash_scripts/createJava.sh"
+	alias tls="clear && ~/.config/scripts/list_tree.sh"
 	alias run="clear && ~/.config/scripts/compile.sh"
 	alias configs="~/.config/scripts/configs.sh"
-	alias tls="clear && tree"
 
 # Language Settings
 
