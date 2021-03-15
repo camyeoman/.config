@@ -8,7 +8,7 @@ PUSH_CHANGES='false'
 
 for arg in "$@"; do
     case $arg in
-        -p|--push-changes)
+        -p|--push)
         PUSH_CHANGES="true"
         shift # Remove flag from args array
         ;;
