@@ -6,6 +6,9 @@
 	# Set default editor to nvim
 	export EDITOR='nvim'
 
+	# use gcc-10
+	alias gcc="gcc-10"
+
 	# rust cargo path
 	export PATH="$HOME/.cargo/bin:$PATH"
 
