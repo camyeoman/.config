@@ -12,8 +12,8 @@ vnoremap  <leader>y  "+y
 nnoremap  <leader>p  "+p
 
 " Go to start and end of line in insert mode, respectively
-inoremap <c-a> <c-o>I
-inoremap <c-e> <c-o>A
+inoremap <c-a> <a-I>
+inoremap <c-e> <a-A>
 
 " Change Y as yank till end of line
 nnoremap Y y$
