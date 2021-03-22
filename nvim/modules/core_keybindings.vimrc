@@ -34,3 +34,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " Tools for folding
 nnoremap <leader>m zE:g/\v^\s\{\_.{-}^\s\}/normal 0f{zfa{<cr>:noh<cr>
 nnoremap <leader>M :g/\v^\{\_.{-}^\}/normal zfa{<cr>:noh<cr>
+
+" To use later
+" :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>

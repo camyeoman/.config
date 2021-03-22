@@ -2,10 +2,10 @@
 "------------------- FORMATTING --------------------
 "---------------------------------------------------
 
-" Text formatting
+" Default Text formatting
 set softtabstop=0  " setting disabled
-set shiftwidth=2   " how many spaces >> or << is
-set tabstop=2      " how many spaces a tab is
+set shiftwidth=4   " how many spaces >> or << is
+set tabstop=4      " how many spaces a tab is
 
 " UI settings
 set termguicolors  " allow true colour :D
