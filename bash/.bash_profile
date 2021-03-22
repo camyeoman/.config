@@ -27,7 +27,7 @@
 	alias tree="tree -C"
 
 	# QOL
-	alias createJava="~/.resources/bash_scripts/createJava.sh"
+	alias create="~/.config/scripts/create_file.sh"
 	alias tls="clear && ~/.config/scripts/list_tree.sh"
 	alias run="clear && ~/.config/scripts/compile.sh"
 	alias configs="~/.config/scripts/configs.sh"
