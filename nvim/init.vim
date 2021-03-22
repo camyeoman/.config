@@ -11,3 +11,7 @@ source ~/.config/nvim/modules/plugin_keybindings.vimrc
 
 " Handle colour scheme
 source ~/.config/nvim/modules/colours.vimrc
+
+" Handle file specific formatting
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 noexpandtab
+autocmd FileType c      setlocal tabstop=4 shiftwidth=4 expandtab
