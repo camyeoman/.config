@@ -4,11 +4,6 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-		" Colour Schemes
-		Plug 'arcticicestudio/nord-vim'
-		Plug 'gilgigilgil/anderson.vim'
-		Plug 'morhetz/gruvbox'
-
 		" Editing Essentials
 		Plug 'michaeljsmith/vim-indent-object'
 		Plug 'tpope/vim-surround'
@@ -22,9 +17,13 @@ call plug#begin('~/.config/nvim/plugged')
 		Plug 'itchyny/lightline.vim'
 
 		" Navigation plugins
-		Plug 'christoomey/vim-tmux-navigator'
 		Plug 'easymotion/vim-easymotion'
 		Plug 'haya14busa/incsearch.vim'
+
+		" Colour Schemes
+		Plug 'arcticicestudio/nord-vim'
+		Plug 'gilgigilgil/anderson.vim'
+		Plug 'morhetz/gruvbox'
 
 call plug#end()
 
