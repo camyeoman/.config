@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
 		Plug 'haya14busa/incsearch.vim'
 
 		" Colour Schemes
+		Plug 'lifepillar/vim-solarized8'
 		Plug 'arcticicestudio/nord-vim'
 		Plug 'gilgigilgil/anderson.vim'
 		Plug 'morhetz/gruvbox'
