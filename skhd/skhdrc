@@ -13,8 +13,8 @@ ctrl + cmd - l : yabai -m window --swap east
 ctrl + cmd - h : yabai -m window --swap west
 
 # toggle window zoom
-cmd + ctrl - d : yabai -m window --toggle zoom-parent
-cmd + ctrl - f : yabai -m window --toggle zoom-fullscreen
+cmd + ctrl  - d : yabai -m window --toggle zoom-parent
+cmd + shift - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
 cmd + ctrl - e : yabai -m window --toggle split
