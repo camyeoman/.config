@@ -22,6 +22,11 @@ yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
 
+# ignore certain programs
+yabai -m rule --add app="^Messenger$" manage=off
+yabai -m rule --add app="^Spotify$" manage=off
+yabai -m rule --add app="^Google$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
 
 # general space settings
 yabai -m config layout                       bsp
