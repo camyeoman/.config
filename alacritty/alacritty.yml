@@ -41,13 +41,16 @@ font:
   use_thin_strokes: true
 
 key_bindings:
+    
+  # Simple fullscreen
 
   - {  key: F,  mods: Command|Control,  action: ToggleSimpleFullscreen              }
 
-  # unbind the bloody cmd-w so I stop accidentally closing shit
+  # unbind the bloody cmd-w so I stop accidentally closing shit like an idiot
+
   - {  key: W,  mods: Command,          chars: ""                                   }
 
-  # Send alt keys instead of special characters {{{
+  # Actual alt keys
 
   - { key: A,          mods: Alt,              chars: "\x1ba"                       }
   - { key: B,          mods: Alt,              chars: "\x1bb"                       }
@@ -75,6 +78,19 @@ key_bindings:
   - { key: X,          mods: Alt,              chars: "\x1bx"                       }
   - { key: Y,          mods: Alt,              chars: "\x1by"                       }
   - { key: Z,          mods: Alt,              chars: "\x1bz"                       }
+  - { key: Key1,       mods: Alt,              chars: "\x1b1"                       }
+  - { key: Key2,       mods: Alt,              chars: "\x1b2"                       }
+  - { key: Key3,       mods: Alt,              chars: "\x1b3"                       }
+  - { key: Key4,       mods: Alt,              chars: "\x1b4"                       }
+  - { key: Key5,       mods: Alt,              chars: "\x1b5"                       }
+  - { key: Key6,       mods: Alt,              chars: "\x1b6"                       }
+  - { key: Key7,       mods: Alt,              chars: "\x1b7"                       }
+  - { key: Key8,       mods: Alt,              chars: "\x1b8"                       }
+  - { key: Key9,       mods: Alt,              chars: "\x1b9"                       }
+  - { key: Key0,       mods: Alt,              chars: "\x1b0"                       }
+  - { key: Grave,      mods: Alt,              chars: "\x1b`"                       }
+  - { key: Period,     mods: Alt,              chars: "\x1b."                       }
+  - { key: Backslash,  mods: Alt,              chars: "\x1b\\"                      }
   - { key: A,          mods: Alt|Shift,        chars: "\x1bA"                       }
   - { key: B,          mods: Alt|Shift,        chars: "\x1bB"                       }
   - { key: C,          mods: Alt|Shift,        chars: "\x1bC"                       }
@@ -101,20 +117,7 @@ key_bindings:
   - { key: X,          mods: Alt|Shift,        chars: "\x1bX"                       }
   - { key: Y,          mods: Alt|Shift,        chars: "\x1bY"                       }
   - { key: Z,          mods: Alt|Shift,        chars: "\x1bZ"                       }
-  - { key: Key1,       mods: Alt,              chars: "\x1b1"                       }
-  - { key: Key2,       mods: Alt,              chars: "\x1b2"                       }
-  - { key: Key3,       mods: Alt,              chars: "\x1b3"                       }
-  - { key: Key4,       mods: Alt,              chars: "\x1b4"                       }
-  - { key: Key5,       mods: Alt,              chars: "\x1b5"                       }
-  - { key: Key6,       mods: Alt,              chars: "\x1b6"                       }
-  - { key: Key7,       mods: Alt,              chars: "\x1b7"                       }
-  - { key: Key8,       mods: Alt,              chars: "\x1b8"                       }
-  - { key: Key9,       mods: Alt,              chars: "\x1b9"                       }
-  - { key: Key0,       mods: Alt,              chars: "\x1b0"                       }
-  - { key: Space,      mods: Control,          chars: "\x00"                        }
-  - { key: Grave,      mods: Alt,              chars: "\x1b`"                       }
   - { key: Grave,      mods: Alt|Shift,        chars: "\x1b~"                       }
-  - { key: Period,     mods: Alt,              chars: "\x1b."                       }
   - { key: Key8,       mods: Alt|Shift,        chars: "\x1b*"                       }
   - { key: Key3,       mods: Alt|Shift,        chars: "\x1b#"                       }
   - { key: Period,     mods: Alt|Shift,        chars: "\x1b>"                       }
@@ -122,20 +125,7 @@ key_bindings:
   - { key: Minus,      mods: Alt|Shift,        chars: "\x1b_"                       }
   - { key: Key5,       mods: Alt|Shift,        chars: "\x1b%"                       }
   - { key: Key6,       mods: Alt|Shift,        chars: "\x1b^"                       }
-  - { key: Backslash,  mods: Alt,              chars: "\x1b\\"                      }
   - { key: Backslash,  mods: Alt|Shift,        chars: "\x1b|"                       }
-
-  # }}}
-  # Currently unused {{{
-
-    # these were used for tmux previously
-
-    # - {  key: H,  mods: Command,          chars: "\x02v"                              }
-    # - {  key: S,  mods: Command,          chars: "\x02h"                              }
-    # - {  key: J,  mods: Command,          chars: "\u001b[B"                           }
-    # - {  key: K,  mods: Command,          chars: "\u001b[A"                           }
-
-  # }}}
 
 # Colours {{{
 
@@ -168,3 +158,14 @@ colors:
      white:   '#ECEFF4'
 
 #}}}
+
+# Currently unused {{{
+
+# these were used for tmux previously
+
+# - {  key: H,  mods: Command,          chars: "\x02v"                              }
+# - {  key: S,  mods: Command,          chars: "\x02h"                              }
+# - {  key: J,  mods: Command,          chars: "\u001b[B"                           }
+# - {  key: K,  mods: Command,          chars: "\u001b[A"                           }
+
+# }}}
