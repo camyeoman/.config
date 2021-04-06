@@ -9,6 +9,9 @@
 	# use gcc-10
 	alias gcc="gcc-10"
 
+	# swap engine for rg if PCRE2 needed
+	alias rg="rg --engine=auto"
+
 	# rust cargo path
 	export PATH="$HOME/.cargo/bin:$PATH"
 
