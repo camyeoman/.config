@@ -31,9 +31,19 @@ nnoremap <A-k> :m .-2<CR>==
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+" Navigating Splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Tools for folding
 nnoremap <leader>m zE:g/\v^\s\{\_.{-}^\s\}/normal 0f{zfa{<cr>:noh<cr>
 nnoremap <leader>M :g/\v^\{\_.{-}^\}/normal zfa{<cr>:noh<cr>
 
 " To use later
-" :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+nnoremap <leader>c I// <esc>
+nnoremap <leader>C <A-0>dw <esc>
+
+:autocmd FileType python nnoremap <buffer> <leader>c I# <esc>
+:autocmd FileType python nnoremap <buffer> <leader>C <A-0>dw <esc>
