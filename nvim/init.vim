@@ -1,17 +1,14 @@
-" General settings customising basic settings like text formatting
+" General settings
 source ~/.config/nvim/modules/settings.vimrc
 
-" Load plugins and their assocaited settings
+" FUNCTIONAL CHANGES
+
+" Plugins and Keybindings
 source ~/.config/nvim/modules/plugins.vimrc
+source ~/.config/nvim/modules/keybindings.vimrc
 
-" Keybindings. First, those which interact with vanilla neovim
-source ~/.config/nvim/modules/core_keybindings.vimrc
-" and second, those which deal with plugins
-source ~/.config/nvim/modules/plugin_keybindings.vimrc
+" VISUAL CHANGES
 
-" Handle colour scheme
+" Handle colour scheme and formatting
 source ~/.config/nvim/modules/colours.vimrc
-
-" Handle file specific formatting
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 noexpandtab
-autocmd FileType c      setlocal tabstop=4 shiftwidth=4 expandtab
+source ~/.config/nvim/modules/formatting.vimrc
