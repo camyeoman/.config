@@ -22,18 +22,15 @@ yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
 
-# ignore certain programs
-yabai -m rule --add app="^Messenger$" manage=off
-yabai -m rule --add app="^Spotify$" manage=off
-yabai -m rule --add app="^Google$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
+# use for specific programs
+yabai -m rule --add app!="^Alacritty$" manage=off
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  7
-yabai -m config bottom_padding               7
-yabai -m config left_padding                 7
-yabai -m config right_padding                7
-yabai -m config window_gap                   7
+yabai -m config top_padding                  0
+yabai -m config bottom_padding               0
+yabai -m config left_padding                 0
+yabai -m config right_padding                0
+yabai -m config window_gap                   2
 
 echo "yabai configuration loaded.."
