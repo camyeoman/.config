@@ -34,6 +34,7 @@
 	alias tls="clear && ~/.config/scripts/list_tree.sh"
 	alias run="clear && ~/.config/scripts/compile.sh"
 	alias configs="~/.config/scripts/configs.sh"
+	alias crep="~/.config/scripts/colourise.sh"
 
 # Language Settings
 

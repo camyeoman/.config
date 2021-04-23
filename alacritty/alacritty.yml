@@ -50,6 +50,10 @@ key_bindings:
 
   - {  key: W,  mods: Command,          chars: ""                                   }
 
+  # for quick saving vim
+
+  - { key: S,          mods: Command,          chars: "\x1bs"                       }
+
   # Actual alt keys
 
   - { key: A,          mods: Alt,              chars: "\x1ba"                       }
