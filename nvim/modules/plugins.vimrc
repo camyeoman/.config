@@ -1,7 +1,3 @@
-"---------------------------------------------------
-"------------------ LOAD PLUGINS -------------------
-"---------------------------------------------------
-
 call plug#begin('~/.config/nvim/plugged')
 
 		" Editing Essentials
@@ -32,10 +28,8 @@ call plug#end()
 "----------------- PLUGIN SETTINGS -----------------
 "---------------------------------------------------
 
-"+++++++++++++++++ Fuzzy finder ++++++++++++++++++++
-
+" FUZZY FINDER
 set rtp+=/usr/local/opt/fzf
-
 let g:fzf_layout = { 'window': {
 			\ 'width': 0.9,
 			\ 'height': 0.4,
@@ -44,24 +38,10 @@ let g:fzf_layout = { 'window': {
 			\ 'rounded': v:false
 			\ }}
 
-"++++++++++++++++++ Autocomplete +++++++++++++++++++
-
+" AUTOCOMPLETE
 function! s:check_back_space() abort
 	let col = col('.') - 1
 	return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-" disable autocomplete for multiple cursors
-function! Multiple_cursors_before()
-	if exists(':NeoCompleteLock')==2
-		exe 'NeoCompleteLock'
-	endif
-endfunction
-
-function! Multiple_cursors_after()
-	if exists(':NeoCompleteUnlock')==2
-		exe 'NeoCompleteUnlock'
-	endif
 endfunction
 
 inoremap <silent><expr> <Tab>
@@ -73,11 +53,11 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" +++++++++++++++++++++ Repeat +++++++++++++++++++++
-
+" REPEAT
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
-" +++++++++++++++++++ Easymotion +++++++++++++++++++
-
+" EASYMOTION
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_use_upper = 0
+let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz;'
