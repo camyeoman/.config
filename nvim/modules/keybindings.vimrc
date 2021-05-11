@@ -9,8 +9,8 @@ let mapleader=" "
 nnoremap <a-s> :w<cr>
 inoremap <a-s> <esc>:w<cr>
 
-" Remove search highlight
-noremap <leader>b :noh<cr>
+" Focused search
+noremap <silent> <leader>b :call Focus_Search(0)<cr>
 
 " Copy and paste using system clipboard
 vnoremap  <leader>y  "+y
