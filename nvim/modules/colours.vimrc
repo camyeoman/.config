@@ -7,8 +7,19 @@ let g:gruvbox_contrast_dark = 'soft'
 colo nord
 
 " search colours
-hi IncSearch cterm=NONE gui=NONE guibg=background guifg=white
-hi Search    cterm=NONE gui=NONE guibg=background guifg=white
+hi IncSearch guibg=background
+			\ gui=undercurl
+			\ guifg=#EBCB8B
+			\ guisp=#EBCB8B
+			\ cterm=underline
+			\ ctermfg=3
+
+hi Search guibg=background
+			\ gui=undercurl
+			\ guifg=#EBCB8B
+			\ guisp=#EBCB8B
+			\ cterm=underline
+			\ ctermfg=3
 
 " Comment and highlight settings
 hi Comment cterm=italic gui=italic
