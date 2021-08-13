@@ -7,14 +7,10 @@
 	export EDITOR='nvim'
 
 	# use gcc-10
-	alias gcc="gcc-10"
-
-	# swap engine for rg if PCRE2 needed
-	alias rg="rg --engine=auto"
+	# alias gcc="gcc-10"
 
 	# rust cargo path
-	export PATH="$HOME/.cargo/bin:$PATH"
-
+	
 # Aliases
 
 	# Utility
@@ -28,6 +24,7 @@
 
 	# Overide defaults
 	alias tree="tree -C"
+	alias subxargs="xargs -I '{}'"
 
 	# QOL
 	alias create="~/.config/scripts/create_file.sh"
@@ -54,3 +51,4 @@
 
 	export SDKMAN_DIR="/Users/cyeoman/.sdkman"
 	[[ -s "/Users/cyeoman/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/cyeoman/.sdkman/bin/sdkman-init.sh"
+. "$HOME/.cargo/env"
