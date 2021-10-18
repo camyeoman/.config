@@ -1,0 +1,67 @@
+## TABLE OF CONTENTS
+.
+├── + BASH
+|   ├── + CONFIGURATION FILES
+|   |   └── * 'bash_profile' vs 'bash_rc'
+|   |
+|   └── + SCRIPTING
+|       └── + string slicing
+|           ├── * slicing by wildcards
+|           └── * slicing by index and length
+└── ...
+
+
+## NOTES
+
+⟶  'bash_profile' vs 'bash_rc'
+
+	The bash_profile is executed for login shells, whereas bashrc is used for
+	interactive non login shells. Basically when spawning new shell, bashrc is
+	used. So if you wanted them to share all data then link them as shown
+	below (if needed for future reference).
+
+	if [ -f ~/.bashrc ]; then
+        source ~/.bashrc
+	fi
+
+
+
+⟶  slicing by wildcards
+
+	${  variable  .  wildcard  }
+				  |
+				  ├── * 'greedy matching' ⟶  ${__(##|%%)__}
+				  |   ├─ 'deque until last _' ${ var ## *_ }
+				  |   └── 'pop until last _'  ${ var %% *_ }
+				  |
+				  └── * 'lazy matching' ⟶  ${__(#|%)__}
+					  ├─ 'deque until first _' ${ var # *_ }
+					  └── 'pop until first _'  ${ var % *_ }
+
+	SIMPLE EXAMPLES
+
+	echo ${ str   #    *_ }  'globA_globB_globC' ⟶  'globB_globC'
+	echo ${ str   ##   *_ }  'globA_globB_globC' ⟶  'globC'
+	echo ${ str   %    _* }  'globA_globB_globC' ⟶  'globA_globB'
+	echo ${ str   %%   _* }  'globA_globB_globC' ⟶  'globA'
+
+
+	IDIOMATIC EXAMPLES
+
+	'remove trailing whitespace' ⟶  ${str%"${str##*[![:space:]]}"}
+	'remove leading whitespace'  ⟶  ${str#"${str%%[![:space:]]*}"}
+	'remove file extension'      ⟶  ${str%.*}
+	'get file extension'         ⟶  ${str##*.}
+
+
+⟶  slicing by index and length
+
+	${ variable : start : len  }
+
+	EXAMPLES
+
+	echo ${ str : 5 : 5 }  'globA_globB_globC' ⟶  '_glob'
+	echo ${ str : 0 : 4 }  'globA_globB_globC' ⟶  'glob'
+
+
+# vim: filetype=reference syntax=sh foldmethod=marker
