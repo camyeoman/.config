@@ -1,65 +1,59 @@
-"---------------------------------------------------
-"--------------- VANILLA KEYBINDINGS ---------------
-"---------------------------------------------------
+"------------------  BASE KEYBINDINGS  -------------------
 
-" Set leader key to spacebar
 let mapleader=" "
 
-" Save file
-nnoremap <a-s> :w<cr>
-inoremap <a-s> <esc>:w<cr>
+"#################### QOL remappings #####################
 
-" Focused search
-noremap <silent> <leader>b :call Focus_Search(0)<cr>
-
-" Copy and paste using system clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>p  "+p
-
-" Go to start and end of line in insert mode, respectively
-inoremap <c-a> <a-I>
-inoremap <c-e> <a-A>
-
-" Change Y as yank till end of line
+" normal mode remappings
+nnoremap <silent> <leader>h :noh<cr>
+nnoremap <silent> <a-s> :w<cr>
 nnoremap Y y$
 
-" Insert Brackets
-inoremap <c-b> <space>{}<left><cr><esc>O
+" insert mode remappings
+inoremap <C-b> <space>{}<left><cr><esc>O
+inoremap <silent> <a-s> <esc>:w<cr>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Del>
 
-" Use alt to move line in visual and normal mode,
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+" system copy and paste
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
 
-" Navigating Splits
+"################ navigating and resizing ################
+
+" navigating splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Resizing splits, using 'alt + <arrow key>'
+" resizing splits, using 'alt + <arrow key>'
 noremap <A-Up>    <C-w>+
 noremap <A-Down>  <C-w>-
 noremap <A-Left>  <C-w><
 noremap <A-Right> <C-w>>
 
-"---------------------------------------------------
-"--------------- PLUGIN KEYBINDINGS ----------------
-"---------------------------------------------------
+" moving lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
-" Fuzzy finder (use control p)
-nnoremap <c-p> <esc>:FZF <C-R>=getcwd()<cr><cr>
 
-" Fuzzy finder on Code Directory (use alt p)
-nnoremap <a-p> :FZF ~/Code<cr>
+"------------------ PLUGIN KEYBINDINGS -------------------
 
-" Easymotion keybinding
+" fuzzy finder"
+
+nnoremap <silent> <C-p> <esc>:FZF <C-R>=getcwd()<cr><cr>
+nnoremap <silent> <A-p> :FZF ~/Code<cr>
+nnoremap <silent> <leader>f :call RIPGREP('', 0)<cr>
+nnoremap <silent> <C-f> :Lines<cr>
+
+" easymotion
 nmap s <Plug>(easymotion-overwin-f2)
-nmap <leader>s :noh<cr><Plug>(easymotion-sn)
+nmap <silent> <leader>s :noh<cr><Plug>(easymotion-sn)
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+" easyalign
 nmap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
