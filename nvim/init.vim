@@ -6,6 +6,7 @@ source ~/.config/nvim/modules/settings.vimrc
 " Plugins and Keybindings
 source ~/.config/nvim/modules/plugins.vimrc
 source ~/.config/nvim/modules/keybindings.vimrc
+source ~/.config/nvim/modules/features.vimrc
 
 " VISUAL CHANGES
 
