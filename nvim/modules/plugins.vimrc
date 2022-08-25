@@ -1,34 +1,3 @@
-"---------------------- PLUGIN LIST ----------------------
-
-call plug#begin('~/.config/nvim/plugged')
-
-		" Editing Essentials
-		Plug 'michaeljsmith/vim-indent-object'
-		Plug 'tpope/vim-surround'
-		Plug 'tpope/vim-repeat'
-		Plug 'junegunn/vim-easy-align'
-		Plug 'wellle/targets.vim'
-
-		" Quality of life
-		Plug 'junegunn/fzf.vim'
-		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-		Plug 'neoclide/coc.nvim', {'branch': 'release'}
-		Plug 'itchyny/lightline.vim'
-
-		" Navigation plugins
-		Plug 'easymotion/vim-easymotion'
-		Plug 'haya14busa/incsearch.vim'
-
-		" Colour Schemes
-		Plug 'lifepillar/vim-solarized8'
-		Plug 'arcticicestudio/nord-vim'
-		Plug 'gilgigilgil/anderson.vim'
-		Plug 'morhetz/gruvbox'
-
-call plug#end()
-
-"-------------------- PLUGIN SETTINGS --------------------
-
 "###################### FUZZY FINDER ######################
 
 function! RIPGREP(query, fullscreen)
@@ -88,7 +57,7 @@ let g:fzf_layout = { 'window': {
 		\ 'rounded': v:false
 	\ }}
 
-"#################### COC AUTOCOMPLETE####################
+"#################### COC AUTOCOMPLETE ###################
 
 function! s:check_back_space() abort
 	let col = col('.') - 1
@@ -100,17 +69,28 @@ inoremap <silent><expr> <Tab>
 			\ <SID>check_back_space() ? "\<Tab>" :
 			\ coc#refresh()
 
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <cr>    pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-"######################### REPEAT#########################
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+"######################### REPEAT ########################
 
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
-"####################### EASYMOTION#######################
+"####################### EASYMOTION ######################
 
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_use_upper = 0
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz;'
+
+"####################### LaTeX ###########################
+
+let g:livepreview_previewer = 'evince'
+
+autocmd FileType tex nnoremap <silent><buffer> <leader>c :w<cr>:silent !pdflatex -output-directory texfiles main.tex<cr>

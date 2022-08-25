@@ -1,15 +1,31 @@
-" General settings
-source ~/.config/nvim/modules/settings.vimrc
+call plug#begin('~/.config/nvim/plugged')
 
-" FUNCTIONAL CHANGES
+		" Editing Essentials
+		Plug 'michaeljsmith/vim-indent-object'
+		Plug 'tpope/vim-surround'
+		Plug 'tpope/vim-repeat'
+		Plug 'junegunn/vim-easy-align'
+		Plug 'wellle/targets.vim'
 
-" Plugins and Keybindings
-source ~/.config/nvim/modules/plugins.vimrc
-source ~/.config/nvim/modules/keybindings.vimrc
-source ~/.config/nvim/modules/features.vimrc
+		" Quality of life
+		Plug 'junegunn/fzf.vim'
+		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+		Plug 'neoclide/coc.nvim', {'branch': 'release'}
+		Plug 'itchyny/lightline.vim'
 
-" VISUAL CHANGES
+		" Navigation plugins
+		Plug 'easymotion/vim-easymotion'
+		Plug 'haya14busa/incsearch.vim'
 
-" Handle colour scheme and formatting
-source ~/.config/nvim/modules/colours.vimrc
-source ~/.config/nvim/modules/formatting.vimrc
+		" Colour Schemes
+		Plug 'lifepillar/vim-solarized8'
+		Plug 'arcticicestudio/nord-vim'
+		Plug 'gilgigilgil/anderson.vim'
+		Plug 'morhetz/gruvbox'
+
+call plug#end()
+
+" Load all of the config files from the modules subdirectory
+for filepath in split(glob('./modules/**/*.vimrc'), '\n')
+	exe 'source' filepath
+endfor

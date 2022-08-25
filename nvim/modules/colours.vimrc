@@ -27,6 +27,13 @@ hi link EasyMotionIncSearch String
 hi link EasyMotionTarget String
 hi link EasyMotionShade SpecialKey
 
+" fix match statment for python
+function! PyMatchBlock()
+	syntax match PythonMatchStatement "\v(^\s*)@<=match( .*:\n)@="
+	syntax match PythonMatchStatement "\v(^\s*match.*:\n\s*)@<=case( .*:.)@="
+	highlight link PythonMatchStatement Keyword
+endfunction
+
 function! Colour_Anderson()
 	let g:lightline = { 'colorscheme': 'seoul256' }
 	colo anderson
