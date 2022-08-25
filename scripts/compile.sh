@@ -25,7 +25,7 @@ function errors() {
 
 function run_python() {
 	output_file="programOutput-${file%*.}"
-	python3 $1 $2 $3 $4 $5 $6 $7 $8 $9 2> compilation_error > $output_file
+	python $1 $2 $3 $4 $5 $6 $7 $8 $9 2> compilation_error > $output_file
 
 	if [ ! -s compilation_error ]; then
 		cat $output_file
