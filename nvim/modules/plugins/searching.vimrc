@@ -1,4 +1,4 @@
-" Setup fuzzy finder
+" setup fuzzy finder and specify keybindings
 
 set rtp+=/usr/local/opt/fzf
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
@@ -13,14 +13,14 @@ let g:fzf_layout = { 'window': {
 
 nnoremap <silent> <C-p> <esc>:GFiles? <C-R>=fnameescape(getcwd())<cr><cr>
 nnoremap <silent> g<C-p> <esc>:FZF <C-R>=fnameescape(getcwd())<cr><cr>
-nnoremap <silent> <leader>f :call RIPGREP('', 0, 1)<cr>
-nnoremap <silent> g<leader>f :call RIPGREP('', 0, 0)<cr>
+nnoremap <silent> <leader>f :call InteractiveSearch('', 0, 1)<cr>
+nnoremap <silent> g<leader>f :call InteractiveSearch('', 0, 0)<cr>
 nnoremap <silent> <A-p> :FZF ~/Code<cr>
 nnoremap <silent> <C-f> :Lines<cr>
 
-" Custom rigrap and fuzzy finder search window
+" custom rigrap and fuzzy finder interactive_search
 
-function! s:interactive_search(query, fullscreen, ignore)
+function! InteractiveSearch(query, fullscreen, ignore)
 	  let preview = 'bat --color=always --italic-text=always --style=changes,numbers'
 				  \ . ' -r $([[ {2} -gt 7 ]] && echo "`expr {2} - 7`:`expr {2} + 8`" || echo "0:16")'
 				  \ . ' --highlight-line {2} {1}'

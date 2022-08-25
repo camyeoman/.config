@@ -3,7 +3,6 @@ hi vertsplit guibg=background
 
 " Set colour scheme
 let g:lightline = { 'colorscheme': 'nord' }
-let g:gruvbox_contrast_dark = 'soft'
 colo nord
 
 " search colours
