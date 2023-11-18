@@ -18,7 +18,7 @@ function errors() {
 	error_preview=$(echo errorPreview-.$file)
 	cat compilation_error | sed 's/-->/⟶ /g' > $error_preview
 	bat --theme=Nord --style="changes" $error_preview
-	
+
 	echo -n '' > compilation_error
 	rm $error_preview
 }
